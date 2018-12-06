@@ -19,7 +19,7 @@ require(["knockout", "base-component"], function(ko: any, baseComponent: any) {
     class PopupSelectorViewModel {
         currentStepId: KnockoutObservable<string> = ko.observable(EnumComponentId.Popup);
         isActive: KnockoutComputed<boolean> = ko.computed(() => { return true; });
-        templateId: KnockoutObservable<string> = ko.observable("hello from popup component");
+        templateId: KnockoutObservable<string> = ko.observable("Go to Step 1");
         requestViewModel: KnockoutObservable<RequestViewModel> = ko.observable(null);
         popupClick: () => void;
         openModalClick: () => void;
