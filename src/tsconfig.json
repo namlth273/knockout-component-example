@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "target": "es6"
+    },
+    "filesGlob": [
+        "src/scripts/**/*.ts",
+        "!node_modules/**/*.ts"
+    ]
+}

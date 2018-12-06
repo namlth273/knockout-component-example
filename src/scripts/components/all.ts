@@ -1,0 +1,1 @@
+//all components have been registered and set dependency in require-config.ts file

@@ -1,0 +1,17 @@
+<div class="request-step1-selector animated fadeIn" data-bind="visible: isActive()">
+    <h1 data-bind="text: templateId"></h1>
+
+    <!-- ko if: requestViewModel != null -->
+    <div class="col-12" data-bind="with: requestViewModel">
+        <div class="form-group">
+            <input type="text" class="form-control" data-bind="value: clientName" />
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" data-bind="value: clientAddress" />
+        </div>
+    </div>
+    <!-- /ko -->
+    <div class="form-group">
+        <button class="btn btn-dark" data-bind="click: step1Click">Next</button>
+    </div>
+</div>

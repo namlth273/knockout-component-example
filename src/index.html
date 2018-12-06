@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, world</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="./contents/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./contents/css/style.css">
+    <link rel="stylesheet" href="./contents/css/vendors/animate/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <div class="container bg-success">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <!-- <h2 data-bind="text: helloText"></h2> -->
+                    <!-- <div data-bind="winsize: windowSize"></div> -->
+                    <!-- <h2 data-bind="text: windowSize"></h2> -->
+                    <h2>isMobile: <span data-bind="text: isMobile"></span></h2>
+                    <h2>
+                        isMainModalVisible: <span data-bind="text: isMainModalVisible"></span>
+                    </h2>
+                    <h2>
+                        triggerStepId: <span data-bind="text: requestViewModel().triggerStepId"></span>
+                    </h2>
+                </div>
+                <!-- ko if : !isMainModalVisible() || (isMobile() && isMainModalVisible()) -->
+                <div class="form-group">
+                    <request-step1-selector params="triggerStepId: triggerStepId(), request: requestViewModel"></request-step1-selector>
+                </div>
+                <div class="form-group">
+                    <request-step2-selector params="triggerStepId: triggerStepId(), request: requestViewModel"></request-step2-selector>
+                </div>
+                <!-- /ko -->
+                <div class="form-group">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" data-bind="text: EnumComponentId.Popup, click: btnActiveClick.bind($root, EnumComponentId.Popup)"></button>
+                        <button class="btn btn-danger invisible" data-bind="text: EnumComponentId.Step1, click: btnActiveClick.bind($root, EnumComponentId.Step1)"></button>
+                        <button class="btn btn-secondary invisible" data-bind="text: EnumComponentId.Step2, click: btnActiveClick.bind($root, EnumComponentId.Step2)"></button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- ko if: !isMobile() -->
+                    <popup-selector params="triggerStepId: triggerStepId(), request: requestViewModel, isMainModalVisible: isMainModalVisible"></popup-selector>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Popup</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" data-bind="if: isMainModalVisible">
+                                    <div class="form-group">
+                                        <request-step1-selector params="triggerStepId: triggerStepId(), request: requestViewModel"></request-step1-selector>
+                                    </div>
+                                    <div class="form-group">
+                                        <request-step2-selector params="triggerStepId: triggerStepId(), request: requestViewModel"></request-step2-selector>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary btn-no-outline" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                                    <button type="button" class="btn btn-outline-primary btn-no-outline"><i class="fas fa-check"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ko if: !isMobile() -->
+    <div class="modal-backdrop fade d-none"></div>
+    <!-- /ko -->
+    <script src="./scripts/vendors/jquery/jquery.min.js"></script>
+    <script src="./scripts/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./scripts/vendors/requirejs/require.js"></script>
+    <script src="./scripts/require-config.js"></script>
+    <script>
+        require(["./scripts/app"]);
+    </script>
+</body>
+
+</html>
