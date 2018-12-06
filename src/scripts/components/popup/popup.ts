@@ -50,6 +50,9 @@ require(["knockout", "base-component"], function(ko: any, baseComponent: any) {
             }
 
             that.openModalClick = () => {
+                if (that.requestViewModel().triggerStepId() == EnumComponentId.Popup)
+                    that.requestViewModel().triggerStepId(EnumComponentId.Step1);
+
                 that.mainModal().open();
             }
 

@@ -23,6 +23,7 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
             that.btnActiveClick = (stepId: EnumComponentId) => {
                 //that.requestViewModel().isInEditMode(true);
                 that.triggerStepId(stepId);
+                that.isMainModalVisible(true);
                 that.requestViewModel().triggerStepId(stepId);
             }
 

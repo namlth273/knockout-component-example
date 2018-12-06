@@ -14,17 +14,27 @@ class Modal {
 	private timer:number;
 	private dialog:Element;
 	private overlay:Element;
+	private isInitialized: boolean = false;
+	private modalElement: Element;
 	
 	constructor(private modal: Element, private options: IModalOptions) {
-		this.isIE = (new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null) ? true : false;
-		this.ieVersion = (new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null) ? parseFloat( RegExp.$1 ) : -1; 
-		this.opened = false;
-		this.timer = 0;
-		this.dialog = modal.querySelector(".modal-dialog");
-		this.init();
+		this.modalElement = modal;
+		if (this.options.isMainModalVisible())
+		{
+			// this.isIE = (new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null) ? true : false;
+			// this.ieVersion = (new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null) ? parseFloat( RegExp.$1 ) : -1; 
+			// this.opened = false;
+			// this.timer = 0;
+			// this.dialog = modal.querySelector(".modal-dialog");
+			this.init();
+			this.isInitialized = true;
+		}
 	}
 	
 	public open(): void {
+		if (!this.isInitialized) {
+			this.init();
+		}
 		this._open();
 	}
 	
@@ -33,6 +43,12 @@ class Modal {
 	}
 	
 	private init() {
+		this.isIE = (new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null) ? true : false;
+		this.ieVersion = (new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null) ? parseFloat( RegExp.$1 ) : -1; 
+		this.opened = false;
+		this.timer = 0;
+		this.dialog = this.modalElement.querySelector(".modal-dialog");
+		
 		if (this.options.content && typeof this.options.content !== "undefined") {
 			this.setContent(this.options.content);
 		}
