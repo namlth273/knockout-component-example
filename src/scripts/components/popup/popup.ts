@@ -1,5 +1,4 @@
 import { RequestViewModel } from "scripts/request/requestViewModel";
-import { Modal, IModalOptions } from "scripts/vendors/bootstrap/modal";
 
 require(["knockout", "base-component"], function(ko: any, baseComponent: any) {
     

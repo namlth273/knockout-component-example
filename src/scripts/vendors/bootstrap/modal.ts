@@ -1,4 +1,4 @@
-export interface IModalOptions {
+interface IModalOptions {
 	backdrop:boolean;
 	keyboard:boolean;
 	duration:number;
@@ -6,7 +6,7 @@ export interface IModalOptions {
 	content?:string;
 }
 
-export class Modal {
+class Modal {
 	
 	private isIE:boolean;
 	private ieVersion:number;
