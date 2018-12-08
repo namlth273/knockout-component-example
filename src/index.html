@@ -14,9 +14,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
 
-    <div class="bg-light m-5">
+    <div class="bg-light m-0 m-md-5 p-5">
         <h2>isSelected: <span data-bind="text: isSelected"></span></h2>
-        <div class="form-group animated fadeIn delay-1s">
+        <div class="form-group animated fadeIn delay-2s">
+            <div class="radio-button-group">
+                <radio-button-selector params="isSelected: isSelected"></radio-button-selector>
+                <label class="form-text radio-button-clild">Hello Component</label>
+            </div>
+            <div class="radio-button-group">
+                <radio-button-selector params="isSelected: isSelected"></radio-button-selector>
+                <label class="form-text radio-button-clild">Hello Component</label>
+            </div>
             <div class="radio-button-group">
                 <radio-button-selector params="isSelected: isSelected"></radio-button-selector>
                 <label class="form-text radio-button-clild">Hello Component</label>

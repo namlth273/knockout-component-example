@@ -1,5 +1,5 @@
 .radio-button-wrapper {
-    font-size: 0.5em;
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +20,7 @@
 
 .radio-button-group {
     display: flex;
+    align-items: center;
 
     radio-button-selector {
         display: flex;
