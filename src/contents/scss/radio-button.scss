@@ -20,19 +20,19 @@
 
 .radio-button-group {
     display: flex;
-}
 
-.radio-button-clild:not(:last-child) {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-
-.radio-button-clild:first-child {
-    margin-left: 0.5rem;
-    margin-right: unset;
-}
-
-.radio-button-clild:last-child {
-    margin-left: unset;
-    margin-right: 0.5rem;
+    .radio-button-clild:not(:last-child) {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    
+    .radio-button-clild:first-child {
+        margin-left: 0.5rem;
+        margin-right: unset;
+    }
+    
+    .radio-button-clild:last-child {
+        margin-left: unset;
+        margin-right: 0.5rem;
+    }
 }
