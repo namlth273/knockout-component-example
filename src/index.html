@@ -7,12 +7,28 @@
     <title>Hello, world</title>
 </head>
 
-<body>
+<body class="bg-secondary">
     <link rel="stylesheet" href="./contents/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="./contents/css/style.css">
     <link rel="stylesheet" href="./contents/css/vendors/animate/animate.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <div class="container bg-success">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+    <div class="bg-light m-5">
+        <div class="radio-button-group">
+            <div class="radio-button-wrapper radio-button-clild">
+                <span class="fa-stack">
+                    <i class="far fa-circle fa-stack-1x"></i>
+                    <i class="far fa-circle fa-stack-2x"></i>
+                </span>
+            </div>
+            <label class="form-text radio-button-clild">Hello</label>
+            <label class="form-text radio-button-clild">Hello</label>
+        </div>
+    </div>
+
+    <!-- ko if: false -->
+    <div class="container bg-success animated fadeIn delay-4s">
         <div class="row">
             <div class="col-12">
                 <div class="form-group">
@@ -45,8 +61,8 @@
                 <div class="form-group">
 
                     <!-- ko if: !isMobile() -->
-                        <popup-selector params="triggerStepId: triggerStepId(), request: requestViewModel, isMainModalVisible: isMainModalVisible"></popup-selector>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    <popup-selector params="triggerStepId: triggerStepId(), request: requestViewModel, isMainModalVisible: isMainModalVisible"></popup-selector>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                             <div class="modal-content">
@@ -65,7 +81,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-secondary btn-no-outline" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                                    <button type="button" class="btn btn-outline-secondary btn-no-outline" data-dismiss="modal"><i
+                                            class="fas fa-times"></i></button>
                                     <button type="button" class="btn btn-outline-primary btn-no-outline"><i class="fas fa-check"></i></button>
                                 </div>
                             </div>
@@ -76,8 +93,7 @@
             </div>
         </div>
     </div>
-
-
+    <!-- /ko -->
 
     <!-- ko if: !isMobile() -->
     <div class="modal-backdrop fade d-none"></div>
