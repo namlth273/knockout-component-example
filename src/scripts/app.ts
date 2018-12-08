@@ -12,6 +12,7 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
         });
         isMainModalVisible: KnockoutObservable<boolean> = ko.observable(false);
         requestViewModel: KnockoutObservable<RequestViewModel> = ko.observable(new RequestViewModel());
+        isSelected: KnockoutObservable<boolean> = ko.observable(false);
 
         btnActiveClick: (stepId: EnumComponentId) => void;
 

@@ -15,15 +15,12 @@
         crossorigin="anonymous">
 
     <div class="bg-light m-5">
-        <div class="radio-button-group">
-            <div class="radio-button-wrapper radio-button-clild">
-                <span class="fa-stack">
-                    <i class="far fa-circle fa-stack-1x"></i>
-                    <i class="far fa-circle fa-stack-2x"></i>
-                </span>
+        <h2>isSelected: <span data-bind="text: isSelected"></span></h2>
+        <div class="form-group animated fadeIn delay-1s">
+            <div class="radio-button-group">
+                <radio-button-selector params="isSelected: isSelected"></radio-button-selector>
+                <label class="form-text radio-button-clild">Hello Component</label>
             </div>
-            <label class="form-text radio-button-clild">Hello</label>
-            <label class="form-text radio-button-clild">Hello</label>
         </div>
     </div>
 
