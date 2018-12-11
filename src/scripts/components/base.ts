@@ -8,3 +8,8 @@ enum EnumComponentId {
     Step1 = "Step1",
     Step2 = "Step2",
 }
+
+interface IRadioOption {
+    id: KnockoutObservable<number>;
+    value: KnockoutObservable<string>;
+}

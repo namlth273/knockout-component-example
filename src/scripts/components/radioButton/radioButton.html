@@ -1,6 +1,1 @@
-<div class="radio-button-wrapper radio-button-clild" data-bind="click: radioClick">
-    <span class="fa-stack">
-        <i class="fa-circle fa-stack-1x" data-bind="css: { 'far': !isSelected(), 'fas': isSelected() }"></i>
-        <i class="far fa-circle fa-stack-2x"></i>
-    </span>
-</div>
+<div class="radio" data-bind="click: radioClick, css: { 'active': isChecked() }"></div>

@@ -1,15 +1,20 @@
-require(["knockout"], function(ko: any) {
-    
+require(["knockout", "base-component"], function (ko: any) {
+
     interface IRadioButtonParam {
-        isSelected: KnockoutObservable<boolean>;
+        option: IRadioOption;
+        activeRadioId: KnockoutObservable<number>;
     }
 
     class RadioButtonParam implements IRadioButtonParam {
-        isSelected: KnockoutObservable<boolean>;
+        option: IRadioOption;
+        activeRadioId: KnockoutObservable<number>;
     }
-    
+
     class RadioButtonViewModel {
-        isSelected: KnockoutComputed<boolean> = ko.computed(() => { return false; });
+        isChecked: KnockoutComputed<boolean> = ko.computed(() => {
+            return false;
+        });
+
         radioClick: () => void;
 
         constructor(params: IRadioButtonParam) {
@@ -18,28 +23,26 @@ require(["knockout"], function(ko: any) {
         }
 
         init = (params: IRadioButtonParam) => {
-            if (params == null) {
-                params = new RadioButtonParam();
-                params.isSelected(false);
-            }
-
-            this.isSelected = ko.computed(() => {
-                return params.isSelected();
+            
+            this.isChecked = ko.computed(() => {
+                return params.activeRadioId() == params.option.id();
             });
 
             this.radioClick = () => {
-                params.isSelected(!params.isSelected());
+                if (!this.isChecked()) {
+                    params.activeRadioId(params.option.id());
+                }
             }
         }
-
-
     }
 
     class RadioButtonComponent {
         constructor() {
             return {
                 viewModel: RadioButtonViewModel,
-                template: { require: ("text!./scripts/components/radioButton/radioButton.html") }
+                template: {
+                    require: ("text!./scripts/components/radioButton/radioButton.html")
+                }
             };
         }
     }

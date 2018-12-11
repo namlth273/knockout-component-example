@@ -15,7 +15,7 @@ require.config({
     },
     shim: {
         "all-component": {
-            deps:["base-component", "popup-component", "request-step1", "request-step2", "radioButton", "modal"]
+            deps: ["base-component", "popup-component", "request-step1", "request-step2", "radioButton", "modal"]
         },
         "bootstrap": ["jquery"],
     }
