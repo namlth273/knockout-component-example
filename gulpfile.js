@@ -53,6 +53,16 @@ var copytasks = [
         src: "node_modules/animate.css/animate.min.css",
         dest: paths.buildcssvendors + "/animate"
     },
+    {
+        name: 'fontawesome',
+        src: "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+        dest: paths.buildcssvendors + "/fontawesome/css"
+    },
+    {
+        name: 'webfonts',
+        src: "node_modules/@fortawesome/fontawesome-free/webfonts/*.*",
+        dest: paths.buildcssvendors + "/fontawesome/webfonts"
+    },
 ];
 
 var copytasknames = [];
