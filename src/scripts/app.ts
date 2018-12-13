@@ -1,7 +1,18 @@
 import { RequestViewModel } from "scripts/request/requestViewModel";
 
 require(["knockout", "all-component"], function (ko: any, components: any) {
-    
+
+    class RadioButton implements IRadioOption {
+        id: KnockoutObservable<number>;
+        value: KnockoutObservable<string>;
+
+        constructor (id: number, value: string){
+            var that = this;
+            that.id = ko.observable(id);
+            that.value = ko.observable(value);
+        }
+    }
+
     class HelloViewModel {
         isActive: KnockoutObservable<boolean> = ko.observable(true);
         helloText: KnockoutObservable<string> = ko.observable("Hello!!!");
@@ -12,7 +23,9 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
         });
         isMainModalVisible: KnockoutObservable<boolean> = ko.observable(false);
         requestViewModel: KnockoutObservable<RequestViewModel> = ko.observable(new RequestViewModel());
-        isSelected: KnockoutObservable<boolean> = ko.observable(false);
+        isChecked: KnockoutObservable<boolean> = ko.observable(false);
+        radioOptions: KnockoutObservableArray<RadioButton>;
+        activeRadioId: KnockoutObservable<number> = ko.observable(-1);
 
         btnActiveClick: (stepId: EnumComponentId) => void;
 
@@ -22,7 +35,6 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
             that.windowSize($(window).width());
 
             that.btnActiveClick = (stepId: EnumComponentId) => {
-                //that.requestViewModel().isInEditMode(true);
                 that.triggerStepId(stepId);
                 that.isMainModalVisible(true);
                 that.requestViewModel().triggerStepId(stepId);
@@ -35,6 +47,11 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
             that.isMobile = ko.computed(() => {
                 return that.windowSize() < 992;
             });
+
+            that.radioOptions = ko.observable([
+                new RadioButton(1, "option 1"),
+                new RadioButton(2, "option 2"),
+            ])
         }
     }
 
