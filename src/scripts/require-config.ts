@@ -11,11 +11,12 @@ require.config({
         "request-step1": "scripts/components/request-step1/request-step1",
         "request-step2": "scripts/components/request-step2/request-step2",
         "radioButton": "scripts/components/radioButton/radioButton",
+        "dropDownPopup": "scripts/components/dropDownPopup/dropDownPopup",
         "modal": "scripts/vendors/bootstrap/modal",
     },
     shim: {
         "all-component": {
-            deps: ["base-component", "popup-component", "request-step1", "request-step2", "radioButton", "modal"]
+            deps: ["base-component", "popup-component", "request-step1", "request-step2", "radioButton", "dropDownPopup", "modal"]
         },
         "bootstrap": ["jquery"],
     }

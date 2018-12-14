@@ -26,8 +26,10 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
         isChecked: KnockoutObservable<boolean> = ko.observable(false);
         radioOptions: KnockoutObservableArray<RadioButton>;
         activeRadioId: KnockoutObservable<number> = ko.observable(-1);
+        isDropDownActive: KnockoutObservable<boolean> = ko.observable(false);
 
         btnActiveClick: (stepId: EnumComponentId) => void;
+        btnDropDownClick: () => void;
 
         constructor() {
             var that = this;
@@ -38,6 +40,10 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
                 that.triggerStepId(stepId);
                 that.isMainModalVisible(true);
                 that.requestViewModel().triggerStepId(stepId);
+            }
+
+            that.btnDropDownClick = () => {
+                that.isDropDownActive(!that.isDropDownActive());
             }
 
             $(window).resize(function () {

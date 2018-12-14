@@ -15,7 +15,7 @@
 
     <div class="container bg-warning my-3 p-5">
         <h2>activeRadioId: <span data-bind="text: activeRadioId"></span></h2>
-        
+
         <!-- ko foreach: { data: radioOptions, as: 'radioOption' } -->
         <div class="radio-button-group">
             <radio-button-selector params="option: radioOption, activeRadioId: $parent.activeRadioId" class="radio-button-clild"></radio-button-selector>
@@ -23,8 +23,19 @@
         </div>
         <!-- /ko -->
     </div>
-    
+
     <div class="container bg-success">
+        <div class="form-row">
+            <div class="col-12 col-md-6 offset-md-6 mt-3">
+                <div class="dropdown-popup-group input-group">
+                    <input class="form-control" type="text" />
+                    <a href="#" class="btn btn-address-book" data-bind="click: btnDropDownClick">
+                        <i class="fa fa-address-book"></i>
+                    </a>
+                    <dropdown-popup-selector params="isActive: isDropDownActive"></dropdown-popup-selector>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 <div class="form-group">
