@@ -106,7 +106,19 @@
     <!-- /ko -->
 
     <template data-bind="attr: { id: dropDownTemplate }">
-        <h2>Hello from dropdown template</h2>
+        <div class="panel-top input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text input-group-text--mod"><i class="fa fa-search"></i></span>
+            </div>
+            <input type="text" class="form-control form-control--mod" placeholder="Search"/>
+            <div class="input-group-append">
+                <span class="input-group-text input-group-text--mod">
+                    <a href="#" data-bind="click: $parent.btnDropDownClick">
+                        <i class="fa fa-times btn-close"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
         <div class="list-group">
             <a href="#" class="list-group-item">Item 1</a>
             <a href="#" class="list-group-item">Item 2</a>

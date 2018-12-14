@@ -13,4 +13,20 @@
 .btn-address-book:focus {
     outline: none;
     box-shadow: none;
-  }
+}
+
+.panel-top {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.btn-close {
+    color: gray;
+}
+
+.input-group-append {
+    .input-group-text--mod {
+        background: none;
+        border: none;
+    }
+}
