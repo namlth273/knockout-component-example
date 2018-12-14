@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./contents/css/vendors/animate/animate.min.css">
     <link rel="stylesheet" href="./contents/css/vendors/fontawesome/css/all.min.css">
 
-    <div class="container bg-warning my-3 p-5">
+    <div class="container bg-warning my-3 p-5 d-none">
         <h2>activeRadioId: <span data-bind="text: activeRadioId"></span></h2>
 
         <!-- ko foreach: { data: radioOptions, as: 'radioOption' } -->
@@ -24,7 +24,7 @@
         <!-- /ko -->
     </div>
 
-    <div class="container bg-success">
+    <div class="container bg-success mt-5">
         <div class="form-row">
             <div class="col-12 col-md-6 offset-md-6 mt-3">
                 <div class="dropdown-popup-group input-group">
@@ -32,7 +32,7 @@
                     <a href="#" class="btn btn-address-book" data-bind="click: btnDropDownClick">
                         <i class="fa fa-address-book"></i>
                     </a>
-                    <dropdown-popup-selector params="isActive: isDropDownActive"></dropdown-popup-selector>
+                    <dropdown-popup-selector params="isActive: isDropDownActive, templateId: dropDownTemplate"></dropdown-popup-selector>
                 </div>
             </div>
         </div>
@@ -104,6 +104,25 @@
     <!-- ko if: !isMobile() -->
     <div class="modal-backdrop fade d-none"></div>
     <!-- /ko -->
+
+    <template data-bind="attr: { id: dropDownTemplate }">
+        <h2>Hello from dropdown template</h2>
+        <div class="list-group">
+            <a href="#" class="list-group-item">Item 1</a>
+            <a href="#" class="list-group-item">Item 2</a>
+            <a href="#" class="list-group-item">Item 3</a>
+            <a href="#" class="list-group-item">Item 4</a>
+            <a href="#" class="list-group-item">Item 5</a>
+            <a href="#" class="list-group-item">Item 6</a>
+            <a href="#" class="list-group-item">Item 7</a>
+            <a href="#" class="list-group-item">Item 8</a>
+            <a href="#" class="list-group-item">Item 9</a>
+            <a href="#" class="list-group-item">Item 10</a>
+            <a href="#" class="list-group-item">Item 11</a>
+            <a href="#" class="list-group-item">Item 12</a>
+            <a href="#" class="list-group-item">Item 13</a>
+        </div>
+    </template>
     <script src="./scripts/vendors/jquery/jquery.min.js"></script>
     <script src="./scripts/vendors/bootstrap/bootstrap.min.js"></script>
     <script src="./scripts/vendors/requirejs/require.js"></script>

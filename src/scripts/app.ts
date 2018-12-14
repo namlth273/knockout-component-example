@@ -27,6 +27,7 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
         radioOptions: KnockoutObservableArray<RadioButton>;
         activeRadioId: KnockoutObservable<number> = ko.observable(-1);
         isDropDownActive: KnockoutObservable<boolean> = ko.observable(false);
+        dropDownTemplate: KnockoutObservable<string> = ko.observable("templateDropDown");
 
         btnActiveClick: (stepId: EnumComponentId) => void;
         btnDropDownClick: () => void;
