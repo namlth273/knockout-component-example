@@ -10,6 +10,17 @@
             <input type="text" class="form-control" data-bind="value: clientAddress" />
         </div>
     </div>
+    <div class="col-12 col-md-6 offset-md-6 mt-3">
+        <div class="form-group">
+            <div class="dropdown-popup-group input-group">
+                <input class="form-control" type="text" />
+                <a href="#" class="btn btn-address-book" data-bind="click: $root.btnDropDownClick">
+                    <i class="fa fa-address-book"></i>
+                </a>
+                <dropdown-popup-selector params="isActive: $root.isDropDownActive, templateId: $root.dropDownTemplate"></dropdown-popup-selector>
+            </div>
+        </div>
+    </div>
     <!-- /ko -->
     <div class="form-group">
         <button class="btn btn-dark" data-bind="click: step1Click">Next</button>
