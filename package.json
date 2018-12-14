@@ -12,7 +12,7 @@
   "author": "namlth",
   "license": "ISC",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.0",
+    "@fortawesome/fontawesome-free": "^5.6.1",
     "@types/jquery": "^3.3.22",
     "animate.css": "^3.7.0",
     "bootstrap": "^4.1.3",
