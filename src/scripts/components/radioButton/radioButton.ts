@@ -5,11 +5,6 @@ require(["knockout", "base-component"], function (ko: any) {
         activeRadioId: KnockoutObservable<number>;
     }
 
-    class RadioButtonParam implements IRadioButtonParam {
-        option: IRadioOption;
-        activeRadioId: KnockoutObservable<number>;
-    }
-
     class RadioButtonViewModel {
         isChecked: KnockoutComputed<boolean> = ko.computed(() => {
             return false;
