@@ -20,6 +20,10 @@ require(["knockout", "base-component"], function(ko: any, baseComponent: any) {
             
             that.modal(new Modal(document.getElementById(that.modalId()), option));
 
+            if (params.isModalActive()) {
+                that.modal().open();
+            }
+
             params.isModalActive.subscribe((newValue) => {
                 if (newValue) {
                     that.modal().open();
