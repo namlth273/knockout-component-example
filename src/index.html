@@ -51,48 +51,49 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- ko if: !isMobile() -->
-        <div class="modal-backdrop fade d-none"></div>
-        <!-- /ko -->
+    <!-- ko if: !isMobile() -->
+    <div class="modal-backdrop fade d-none"></div>
+    <!-- /ko -->
 
-        <template data-bind="attr: { id: dropDownTemplate }">
-            <div class="panel-top input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text input-group-text--mod"><i class="fa fa-search"></i></span>
-                </div>
-                <input type="text" class="form-control form-control--mod" placeholder="Search" />
-                <div class="input-group-append">
-                    <span class="input-group-text input-group-text--mod">
-                        <a href="#" data-bind="click: $root.btnDropDownClick">
-                            <i class="fa fa-times btn-close"></i>
-                        </a>
-                    </span>
-                </div>
+    <template data-bind="attr: { id: dropDownTemplate }">
+        <div class="panel-top input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text input-group-text--mod"><i class="fa fa-search"></i></span>
             </div>
-            <div class="list-group">
-                <a href="#" class="list-group-item">Item 1</a>
-                <a href="#" class="list-group-item">Item 2</a>
-                <a href="#" class="list-group-item">Item 3</a>
-                <a href="#" class="list-group-item">Item 4</a>
-                <a href="#" class="list-group-item">Item 5</a>
-                <a href="#" class="list-group-item">Item 6</a>
-                <a href="#" class="list-group-item">Item 7</a>
-                <a href="#" class="list-group-item">Item 8</a>
-                <a href="#" class="list-group-item">Item 9</a>
-                <a href="#" class="list-group-item">Item 10</a>
-                <a href="#" class="list-group-item">Item 11</a>
-                <a href="#" class="list-group-item">Item 12</a>
-                <a href="#" class="list-group-item">Item 13</a>
+            <input type="text" class="form-control form-control--mod" placeholder="Search" />
+            <div class="input-group-append">
+                <span class="input-group-text input-group-text--mod">
+                    <a href="#" data-bind="click: $root.btnDropDownClick">
+                        <i class="fa fa-times btn-close"></i>
+                    </a>
+                </span>
             </div>
-        </template>
-        <script src="./scripts/vendors/jquery/jquery.min.js"></script>
-        <script src="./scripts/vendors/bootstrap/bootstrap.min.js"></script>
-        <script src="./scripts/vendors/requirejs/require.js"></script>
-        <script src="./scripts/require-config.js"></script>
-        <script>
-            require(["./scripts/app"]);
-        </script>
+        </div>
+        <div class="list-group">
+            <a href="#" class="list-group-item">Item 1</a>
+            <a href="#" class="list-group-item">Item 2</a>
+            <a href="#" class="list-group-item">Item 3</a>
+            <a href="#" class="list-group-item">Item 4</a>
+            <a href="#" class="list-group-item">Item 5</a>
+            <a href="#" class="list-group-item">Item 6</a>
+            <a href="#" class="list-group-item">Item 7</a>
+            <a href="#" class="list-group-item">Item 8</a>
+            <a href="#" class="list-group-item">Item 9</a>
+            <a href="#" class="list-group-item">Item 10</a>
+            <a href="#" class="list-group-item">Item 11</a>
+            <a href="#" class="list-group-item">Item 12</a>
+            <a href="#" class="list-group-item">Item 13</a>
+        </div>
+    </template>
+    <script src="./scripts/vendors/jquery/jquery.min.js"></script>
+    <script src="./scripts/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./scripts/vendors/requirejs/require.js"></script>
+    <script src="./scripts/require-config.js"></script>
+    <script>
+        require(["./scripts/app"]);
+    </script>
 </body>
 
 </html>
