@@ -4,16 +4,16 @@ require(["knockout", "base-component"], function(ko: any, baseComponent: any) {
     
     interface IPopupParam extends IComponentParamBase {
         request: KnockoutObservable<RequestViewModel>;
-        isMainModalVisible: KnockoutObservable<boolean>;
+        isModalActive: KnockoutObservable<boolean>;
     }
     
-    class MainModalOption implements IModalOptions {
-        backdrop: boolean;
-        keyboard: boolean;
-        duration: number;
-        content?: string;
-        isMainModalVisible: KnockoutObservable<boolean> = ko.observable(false);
-    }
+    // class MainModalOption implements IModalOptions {
+    //     backdrop: boolean;
+    //     keyboard: boolean;
+    //     duration: number;
+    //     content?: string;
+    //     isModalActive: KnockoutObservable<boolean> = ko.observable(false);
+    // }
 
     class PopupSelectorViewModel {
         currentStepId: KnockoutObservable<string> = ko.observable(EnumComponentId.Popup);
@@ -31,7 +31,7 @@ require(["knockout", "base-component"], function(ko: any, baseComponent: any) {
             option.backdrop = true;
             option.keyboard = true;
             option.duration = 100;
-            option.isMainModalVisible = params.isMainModalVisible;
+            option.isModalActive = params.isModalActive;
             //option.content = content;
 
             that.mainModal(new Modal(document.getElementById("exampleModal"), option));
@@ -56,7 +56,7 @@ require(["knockout", "base-component"], function(ko: any, baseComponent: any) {
                 that.mainModal().open();
             }
 
-            if (params.isMainModalVisible())
+            if (params.isModalActive())
             {
                 that.mainModal().open();
             }

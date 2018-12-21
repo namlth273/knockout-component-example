@@ -33,7 +33,7 @@
                     <h2>windows width: <span data-bind="text: windowSize"></span></h2>
                     <h2>isMobile: <span data-bind="text: isMobile"></span></h2>
                     <h2>
-                        isMainModalVisible: <span data-bind="text: isMainModalVisible"></span>
+                        isModalActive: <span data-bind="text: isModalActive"></span>
                     </h2>
                     <h2>
                         triggerStepId: <span data-bind="text: requestViewModel().triggerStepId"></span>
@@ -57,7 +57,7 @@
                 <div class="form-group">
 
                     <!-- ko if: !isMobile() -->
-                    <popup-selector params="triggerStepId: triggerStepId(), request: requestViewModel, isMainModalVisible: isMainModalVisible"></popup-selector>
+                    <popup-selector params="triggerStepId: triggerStepId(), request: requestViewModel, isModalActive: isModalActive"></popup-selector>
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -68,7 +68,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body" data-bind="if: isMainModalVisible">
+                                <div class="modal-body" data-bind="if: isModalActive">
                                     <div class="form-group">
                                         <request-step1-selector params="triggerStepId: triggerStepId(), request: requestViewModel"></request-step1-selector>
                                     </div>
@@ -85,52 +85,52 @@
                         </div>
                     </div>
                     <!-- /ko -->
+                    <create-request></create-request>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- ko if: !isMobile() -->
-    <div class="modal-backdrop fade d-none"></div>
-    <!-- /ko -->
+        <!-- ko if: !isMobile() -->
+        <div class="modal-backdrop fade d-none"></div>
+        <!-- /ko -->
 
-    <template data-bind="attr: { id: dropDownTemplate }">
-        <div class="panel-top input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text input-group-text--mod"><i class="fa fa-search"></i></span>
+        <template data-bind="attr: { id: dropDownTemplate }">
+            <div class="panel-top input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text input-group-text--mod"><i class="fa fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control form-control--mod" placeholder="Search" />
+                <div class="input-group-append">
+                    <span class="input-group-text input-group-text--mod">
+                        <a href="#" data-bind="click: $root.btnDropDownClick">
+                            <i class="fa fa-times btn-close"></i>
+                        </a>
+                    </span>
+                </div>
             </div>
-            <input type="text" class="form-control form-control--mod" placeholder="Search"/>
-            <div class="input-group-append">
-                <span class="input-group-text input-group-text--mod">
-                    <a href="#" data-bind="click: $root.btnDropDownClick">
-                        <i class="fa fa-times btn-close"></i>
-                    </a>
-                </span>
+            <div class="list-group">
+                <a href="#" class="list-group-item">Item 1</a>
+                <a href="#" class="list-group-item">Item 2</a>
+                <a href="#" class="list-group-item">Item 3</a>
+                <a href="#" class="list-group-item">Item 4</a>
+                <a href="#" class="list-group-item">Item 5</a>
+                <a href="#" class="list-group-item">Item 6</a>
+                <a href="#" class="list-group-item">Item 7</a>
+                <a href="#" class="list-group-item">Item 8</a>
+                <a href="#" class="list-group-item">Item 9</a>
+                <a href="#" class="list-group-item">Item 10</a>
+                <a href="#" class="list-group-item">Item 11</a>
+                <a href="#" class="list-group-item">Item 12</a>
+                <a href="#" class="list-group-item">Item 13</a>
             </div>
-        </div>
-        <div class="list-group">
-            <a href="#" class="list-group-item">Item 1</a>
-            <a href="#" class="list-group-item">Item 2</a>
-            <a href="#" class="list-group-item">Item 3</a>
-            <a href="#" class="list-group-item">Item 4</a>
-            <a href="#" class="list-group-item">Item 5</a>
-            <a href="#" class="list-group-item">Item 6</a>
-            <a href="#" class="list-group-item">Item 7</a>
-            <a href="#" class="list-group-item">Item 8</a>
-            <a href="#" class="list-group-item">Item 9</a>
-            <a href="#" class="list-group-item">Item 10</a>
-            <a href="#" class="list-group-item">Item 11</a>
-            <a href="#" class="list-group-item">Item 12</a>
-            <a href="#" class="list-group-item">Item 13</a>
-        </div>
-    </template>
-    <script src="./scripts/vendors/jquery/jquery.min.js"></script>
-    <script src="./scripts/vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="./scripts/vendors/requirejs/require.js"></script>
-    <script src="./scripts/require-config.js"></script>
-    <script>
-        require(["./scripts/app"]);
-    </script>
+        </template>
+        <script src="./scripts/vendors/jquery/jquery.min.js"></script>
+        <script src="./scripts/vendors/bootstrap/bootstrap.min.js"></script>
+        <script src="./scripts/vendors/requirejs/require.js"></script>
+        <script src="./scripts/require-config.js"></script>
+        <script>
+            require(["./scripts/app"]);
+        </script>
 </body>
 
 </html>

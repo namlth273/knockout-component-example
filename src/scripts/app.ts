@@ -21,7 +21,7 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
         isMobile: KnockoutComputed<boolean> = ko.computed(() => {
             return false;
         });
-        isMainModalVisible: KnockoutObservable<boolean> = ko.observable(false);
+        isModalActive: KnockoutObservable<boolean> = ko.observable(false);
         requestViewModel: KnockoutObservable<RequestViewModel> = ko.observable(new RequestViewModel());
         isChecked: KnockoutObservable<boolean> = ko.observable(false);
         radioOptions: KnockoutObservableArray<RadioButton>;
@@ -39,7 +39,7 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
 
             that.btnActiveClick = (stepId: EnumComponentId) => {
                 that.triggerStepId(stepId);
-                that.isMainModalVisible(true);
+                that.isModalActive(true);
                 that.requestViewModel().triggerStepId(stepId);
             }
 
@@ -58,7 +58,7 @@ require(["knockout", "all-component"], function (ko: any, components: any) {
             that.radioOptions = ko.observable([
                 new RadioButton(1, "option 1"),
                 new RadioButton(2, "option 2"),
-            ])
+            ]);
         }
     }
 

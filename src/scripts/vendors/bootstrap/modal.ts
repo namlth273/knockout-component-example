@@ -2,8 +2,16 @@ interface IModalOptions {
 	backdrop:boolean;
 	keyboard:boolean;
 	duration:number;
-	isMainModalVisible: KnockoutObservable<boolean>;
+	isModalActive: KnockoutObservable<boolean>;
 	content?:string;
+}
+
+class MainModalOption implements IModalOptions {
+	backdrop: boolean = true;
+	keyboard: boolean = true;
+	duration: number = 100;
+	content?: string;
+	isModalActive: KnockoutObservable<boolean>;
 }
 
 class Modal {
@@ -19,7 +27,7 @@ class Modal {
 	
 	constructor(private modal: Element, private options: IModalOptions) {
 		this.modalElement = modal;
-		if (this.options.isMainModalVisible())
+		if (this.options.isModalActive())
 		{
 			// this.isIE = (new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null) ? true : false;
 			// this.ieVersion = (new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null) ? parseFloat( RegExp.$1 ) : -1; 
@@ -87,7 +95,7 @@ class Modal {
 		
 		this.modal.setAttribute("data-timer", that.timer.toString());
 		this.opened = true;
-		this.options.isMainModalVisible(true);
+		this.options.isModalActive(true);
 	}
 	
 	private _close(): void {
@@ -111,7 +119,7 @@ class Modal {
 		
 		this.modal.setAttribute("data-timer", that.timer.toString());
         this.opened = false;
-		this.options.isMainModalVisible(false);
+		this.options.isModalActive(false);
 	}
 	
 	private setContent(content:string) {

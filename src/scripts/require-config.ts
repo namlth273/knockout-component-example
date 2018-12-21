@@ -8,15 +8,17 @@ require.config({
         "base-component": "scripts/components/base",
         "all-component": "scripts/components/all",
         "popup-component": "scripts/components/popup/popup",
+        "customPopupComponent": "scripts/components/customPopup/customPopup",
         "request-step1": "scripts/components/request-step1/request-step1",
         "request-step2": "scripts/components/request-step2/request-step2",
         "radioButton": "scripts/components/radioButton/radioButton",
         "dropDownPopup": "scripts/components/dropDownPopup/dropDownPopup",
         "modal": "scripts/vendors/bootstrap/modal",
+        "createRequestComponent": "scripts/components/createRequest/createRequest",
     },
     shim: {
         "all-component": {
-            deps: ["base-component", "popup-component", "request-step1", "request-step2", "radioButton", "dropDownPopup", "modal"]
+            deps: ["base-component", "popup-component", "customPopupComponent", "createRequestComponent", "request-step1", "request-step2", "radioButton", "dropDownPopup", "modal"]
         },
         "bootstrap": ["jquery"],
     }
