@@ -18,8 +18,8 @@
 
         <!-- ko foreach: { data: radioOptions, as: 'radioOption' } -->
         <div class="radio-button-group">
-            <radio-button-selector params="option: radioOption, activeRadioId: $parent.activeRadioId" class="radio-button-clild"></radio-button-selector>
-            <label class="form-text radio-button-clild" data-bind="text: radioOption.value"></label>
+            <radio-button-selector params="option: radioOption, activeRadioId: $parent.activeRadioId" class="radio-button-child"></radio-button-selector>
+            <label class="form-text radio-button-child" data-bind="text: radioOption.value"></label>
         </div>
         <!-- /ko -->
     </div>
@@ -52,10 +52,6 @@
             </div>
         </div>
     </div>
-
-    <!-- ko if: !isMobile() -->
-    <div class="modal-backdrop fade d-none"></div>
-    <!-- /ko -->
 
     <template data-bind="attr: { id: dropDownTemplate }">
         <div class="panel-top input-group">
